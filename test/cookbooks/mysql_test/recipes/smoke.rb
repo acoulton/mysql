@@ -1,7 +1,10 @@
 require 'shellwords'
 
 # variables
-root_pass = 'MyPa$$wordHasSpecialChars!'
+# Duplicated in libraries/helpers.rb
+strong_root_password = 'MyPa$$word\Has_"Special\'Chars%!'
+shell_root_password  = Shellwords.escape(strong_root_password)
+
 
 # master
 mysql_service 'master' do
